@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { memo, useState, useCallback, useMemo } from "react";
+import { memo, useState, useCallback } from "react";
 import { CloseIcon, ArrowUpIcon } from "../icons";
 import {
   ReactLogo,
@@ -122,7 +122,7 @@ const ProjectDetails = memo(({
       transition={{ duration: 0.2 }}
     >
       <motion.div
-        className="relative max-w-6xl h-full md:h-[80vh] overflow-hidden border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
+        className="relative max-w-[110rem] w-[95vw] h-full md:h-[80vh] overflow-hidden border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
         initial={{ opacity: 0, scale: 0.5, y: 50 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.5, y: 50 }}
@@ -137,10 +137,10 @@ const ProjectDetails = memo(({
           <CloseIcon />
         </button>
 
-        {/* 2 Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+        {/* 2 Column Layout: 60% Left, 40% Right (Desktop only) */}
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] h-full overflow-y-auto lg:overflow-hidden">
           {/* Left Column: Image Slider + Icons */}
-          <div className="flex flex-col p-6 gap-6">
+          <div className="flex flex-col p-6 gap-6 lg:overflow-y-auto">
             {/* Image Slider */}
             <div className="relative flex-1 overflow-hidden rounded-xl">
               <AnimatePresence mode="wait">
@@ -148,7 +148,7 @@ const ProjectDetails = memo(({
                   key={currentImageIndex}
                   src={imageList[currentImageIndex]}
                   alt={`${title} - ${currentImageIndex + 1}`}
-                  className="object-cover w-full h-full"
+                  className="object-contain w-full h-full"
                   initial={{ opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -100 }}
@@ -212,8 +212,8 @@ const ProjectDetails = memo(({
 
           {/* Right Column: Description */}
           <div className="flex flex-col p-6 overflow-y-auto">
-            <h5 className="mb-4 text-3xl font-bold text-white">{title}</h5>
-            <div className="flex-1 space-y-4">
+            <h5 className="mb-4 text-3xl font-bold text-white flex-shrink-0">{title}</h5>
+            <div className="flex-1 space-y-4 min-h-0 overflow-y-auto">
               <p className="text-lg font-normal text-neutral-300">{description}</p>
               {subDescription.map((subDesc, index) => (
                 <p key={index} className="text-base font-normal text-neutral-400">{subDesc}</p>
@@ -223,7 +223,7 @@ const ProjectDetails = memo(({
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 mt-6 font-medium text-white transition-all rounded-lg cursor-pointer bg-gradient-to-r from-indigo to-royal hover:opacity-90"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 mt-6 font-medium text-white transition-all rounded-lg cursor-pointer bg-gradient-to-r from-indigo to-royal hover:opacity-90 flex-shrink-0"
             >
               View Project
               <ArrowUpIcon />

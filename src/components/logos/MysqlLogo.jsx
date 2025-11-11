@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-const MysqlLogo = memo(({ width = 48, height = 48, className = '' }) => (
+const MysqlLogo = memo(({ width = 64, height = 64, className = '' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 204.8 105.765"

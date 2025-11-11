@@ -1,20 +1,7 @@
 import { useRef, memo, useState, useEffect } from "react";
-import { Card, CopyEmailButton, Frameworks } from "../components/ui";
+import { Card, Frameworks } from "../components/ui";
 import { Globe } from "../components/3d";
-import {
-  DotnetLogo,
-  ReactLogo,
-  AzureLogo,
-  GolangLogo,
-  NextjsLogo,
-  CsharpLogo,
-  TypescriptLogo,
-  ElasticsearchLogo,
-  MysqlLogo,
-  GcpLogo,
-  PostgresqlLogo,
-  MongodbLogo,
-} from "../components/logos";
+import { CvIcon } from "../components/icons";
 
 const About = memo(() => {
   const grid2Container = useRef();
@@ -63,48 +50,36 @@ const About = memo(() => {
         <div className="grid-default-color grid-2">
           <div
             ref={grid2Container}
-            className="flex items-center justify-center w-full h-full relative overflow-hidden"
+            className="flex items-center justify-center w-full h-full relative"
           >
-            <p className="z-10 text-4xl md:text-5xl font-bold text-gray-300 text-center px-4">
-              System Architecture<br/>& Cloud Technologies
+            <p className="text-4xl md:text-5xl font-bold text-gray-300 text-center px-4">
+              Soft Skills
             </p>
-            {/* Floating Icons */}
-            <div className="absolute top-[10%] left-[15%] opacity-20">
-              <DotnetLogo width={60} height={60} />
-            </div>
-            <div className="absolute top-[25%] right-[20%] opacity-25">
-              <ReactLogo width={50} height={50} />
-            </div>
-            <div className="absolute bottom-[25%] left-[10%] opacity-20">
-              <AzureLogo width={55} height={55} />
-            </div>
-            <div className="absolute top-[60%] right-[15%] opacity-25">
-              <GolangLogo width={50} height={50} />
-            </div>
-            <div className="absolute bottom-[15%] right-[25%] opacity-20">
-              <NextjsLogo width={45} height={45} />
-            </div>
-            <div className="absolute top-[40%] left-[25%] opacity-15">
-              <CsharpLogo width={40} height={40} />
-            </div>
-            <div className="absolute bottom-[40%] right-[30%] opacity-20">
-              <TypescriptLogo width={45} height={45} />
-            </div>
-            <div className="absolute top-[15%] right-[35%] opacity-15">
-              <ElasticsearchLogo width={40} height={40} />
-            </div>
-            <div className="absolute bottom-[30%] left-[30%] opacity-20">
-              <MysqlLogo width={50} height={50} />
-            </div>
-            <div className="absolute top-[70%] left-[20%] opacity-15">
-              <GcpLogo width={40} height={40} />
-            </div>
-            <div className="absolute top-[50%] right-[10%] opacity-20">
-              <PostgresqlLogo width={45} height={45} />
-            </div>
-            <div className="absolute bottom-[50%] left-[35%] opacity-15">
-              <MongodbLogo width={40} height={40} />
-            </div>
+            <Card
+              style={{ rotate: "20deg", top: "10%", left: "15%" }}
+              text="Collaboration"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "-30deg", top: "25%", right: "20%" }}
+              text="Adaptability"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "45deg", bottom: "25%", left: "10%" }}
+              text="Analytical Thinking"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "-45deg", top: "60%", right: "15%" }}
+              text="Problem Solving"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "30deg", bottom: "15%", right: "25%" }}
+              text="Leadership"
+              containerRef={grid2Container}
+            />
           </div>
         </div>
         {/* Grid 3 */}
@@ -120,13 +95,21 @@ const About = memo(() => {
           </figure>
         </div>
         {/* Grid 4 */}
-        <div className="grid-special-color grid-4">
-          <div className="flex flex-col items-center justify-center gap-4 size-full">
+        <div className="grid-special-color grid-4 relative overflow-hidden">
+          <div className="flex flex-col items-center justify-center gap-4 size-full z-10">
             <p className="text-center headtext">
-              Do you want to start a project together?
+              Download My CV
             </p>
-            <CopyEmailButton />
+            <a
+              href="/CV.pdf"
+              download="Andrian_Pratama_CV.pdf"
+              className="px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo to-royal rounded-lg hover:scale-105 transition-transform duration-200 cursor-pointer shadow-lg"
+            >
+              Download CV
+            </a>
           </div>
+          {/* Background CV Icon */}
+          <CvIcon className="absolute -top-20 -right-20 opacity-10" width={250} height={250} />
         </div>
         {/* Grid 5 */}
         <div className="grid-default-color grid-5">

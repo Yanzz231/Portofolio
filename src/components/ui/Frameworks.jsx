@@ -35,7 +35,7 @@ import {
 } from "../logos";
 
 // Tech stack based on CV:
-// Programming Languages: C#, JavaScript, TypeScript, C++, HTML, CSS, C, Python, Golang
+// Programming Languages: C#, JavaScript, TypeScript, C++, HTML, CSS, Python, Golang
 // Frameworks & Libraries: ASP.NET, .NET 6, ReactJS, NextJS, ExpressJS, Tailwind, Bootstrap
 // Databases: MySQL, MongoDB, Prisma, PostgreSQL
 // Tools & Platforms: Azure DevOps, Git, Postman, RDP, VPS, NGINX, GCP

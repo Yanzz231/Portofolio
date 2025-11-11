@@ -22,7 +22,9 @@ const Card = memo(({ style, text, image, icon: Icon, containerRef }) => {
         dragTransition={dragTransition}
         dragMomentum={false}
       >
-        <Icon width={60} height={60} />
+        <div className="pointer-events-none">
+          <Icon width={60} height={60} />
+        </div>
       </motion.div>
     );
   }
@@ -48,7 +50,7 @@ const Card = memo(({ style, text, image, icon: Icon, containerRef }) => {
   // If text is provided
   return (
     <motion.div
-      className="absolute px-1 py-4 text-xl text-center rounded-full ring ring-gray-700 font-extralight bg-storm w-[12rem] cursor-grab will-change-transform"
+      className="absolute px-6 py-4 text-xl text-center whitespace-nowrap rounded-full ring ring-gray-700 font-extralight bg-storm cursor-grab will-change-transform"
       style={style}
       whileHover={{ scale: 1.05 }}
       drag

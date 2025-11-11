@@ -5,6 +5,7 @@ export { default as CopyIcon } from './CopyIcon';
 export { default as CopyDoneIcon } from './CopyDoneIcon';
 export { default as ArrowRightIcon } from './ArrowRightIcon';
 export { default as ArrowUpIcon } from './ArrowUpIcon';
+export { default as CvIcon } from './CvIcon';
 
 // Special Icons
 export { default as OrbitCircleIcon } from './OrbitCircleIcon';
